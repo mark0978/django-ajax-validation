@@ -35,8 +35,8 @@ def validate(request, *args, **kwargs):
             formfields = dict([(fieldname, form[fieldname]) for fieldname in form.fields.keys()])
 
         # if fields have been specified then restrict the error list
-		fields = request.POST.getlist('fields')
-		if fields:
+        fields = request.POST.getlist('fields')
+        if fields:
             fields = fields + ['__all__']
             errors = dict([(key, val) for key, val in errors.iteritems() if key in fields])
 
